@@ -127,8 +127,9 @@ button::after {
 
 .submenu-items {
   text-align: left;
-  font-weight: 400;
-  font-size: 15px;
+  font-weight: 300;
+  font-size: 18px;
+  letter-spacing: 1px;
   position: absolute;
   left: 0;
   visibility: hidden;
