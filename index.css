@@ -1,0 +1,589 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500;600;700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Teko", sans-serif;
+}
+
+.wrapper {
+  height: 100vh;
+  width: 100%;
+  scroll-behavior: auto;
+}
+
+section {
+  min-height: 100vh;
+}
+
+.reveal {
+  position: relative;
+  transform: translateY(150px) scaleY(0.6);
+  opacity: 0;
+  transition: 0.25s all ease;
+}
+
+.reveal.active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* ........................... */
+/*  - ------------------------------------------------- navbar - ------------------------------------------------------------ */
+nav {
+  color: #fff;
+  z-index: 9999;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: transparent;
+  height: auto;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 50px;
+}
+
+.navbar-items {
+  padding: 10px 30px;
+}
+
+.submenu-text {
+  font-family: "Teko", sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.submenu-arrow {
+  padding-left: 5px;
+}
+
+.navbar-items button {
+  font-family: "Teko", sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  background: none;
+  color: #fff;
+  border: 0;
+  padding: 10px 30px;
+  position: relative;
+  vertical-align: middle;
+  box-sizing: border-box;
+}
+
+button::before,
+button::after {
+  box-sizing: inherit;
+  content: "";
+  position: absolute;
+}
+
+.draw::before,
+.draw::after {
+  border: 2px solid transparent;
+  width: 0;
+  height: 0;
+}
+
+.draw::before {
+  top: 0;
+  left: 0;
+}
+
+.draw::after {
+  bottom: 0;
+  right: 0;
+}
+
+.draw:hover::before,
+.draw:hover::after {
+  width: 100%;
+  height: 100%;
+}
+
+.draw:hover::before {
+  border-top-color: #fff;
+  border-left-color: #fff;
+  transition: 0.25s ease-in;
+}
+
+.draw:hover::after {
+  border-bottom-color: #fff;
+  border-right-color: #fff;
+  transition: 0.25s ease-in;
+}
+
+/* submenu */
+.submenu {
+  /* overflow: hidden; */
+  position: relative;
+}
+
+.submenu-items {
+  text-align: left;
+  font-weight: 400;
+  font-size: 15px;
+  position: absolute;
+  left: 0;
+  visibility: hidden;
+  z-index: 9999;
+  width: 100%;
+}
+
+.submenu-items li {
+  background-color: black;
+  list-style: none;
+  padding: 9px 8px;
+}
+
+.submenu-items ul {
+  border: #fff 1px solid;
+  margin-top: 1rem;
+}
+.submenu-items li:hover {
+  background-color: grey;
+}
+
+.submenu:hover .submenu-items,
+.submenu:hover {
+  visibility: visible;
+}
+
+/* global h1 */
+h1 {
+  padding: 0px 0px;
+  font-family: "Teko", sans-serif;
+  font-weight: 600;
+  font-size: 138px;
+  text-align: center;
+  line-height: 90%;
+}
+
+/* -------------------------------------------------- intro ------------------------------------------------------------- */
+.home {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  color: #fff;
+}
+
+.home-title {
+  background-size: 35%;
+  background-position: center;
+  background-image: url("./assets/company/gvl-frame.png");
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+}
+
+.home-h1 {
+  padding: 55px;
+}
+
+.home-desc {
+  text-align: center;
+  margin: 30px 0px;
+}
+
+.home-desc p {
+  font-size: 18px;
+  padding: 10px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  font-family: "Roboto", sans-serif;
+}
+
+/* ------------------------------------  Slide Sections ---------------------------------------- */
+
+/* global for slide  */
+.content h1 {
+  margin-top: 20px;
+  line-height: 90%;
+  text-shadow: rgb(0 54 96 / 65%) 2px 5px 20px;
+}
+.content p {
+  font-family: "Roboto", sans-serif;
+}
+
+.slide-one,
+.slide-two,
+.slide-three,
+.slide-four,
+.slide-five,
+.slide-six,
+.slide-seven,
+.slide-eight,
+.slide-special,
+.slide-ending {
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+/* overall partner image */
+
+.partner-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-partner {
+  max-width: 5%;
+  margin: 0px 15px;
+}
+
+/* ------------------------------------- slide one ------------------------------------------------------ */
+.slide-one {
+  background-image: url("./assets/slides/slideOne/banner-2-bg.jpg");
+}
+
+.slide-one-title {
+  background-image: url("./assets/slides/slideOne/banner-2-square.png");
+  background-size: 65%;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+}
+
+.slide-one-h1 {
+  padding: 55px;
+}
+
+.slide-one-desc {
+  text-align: center;
+  margin: 30px 0px;
+}
+
+.slide-one p {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+/* -------------------- slide 2 ------------------------------------------------------------ */
+.slide-two {
+  background-image: url("./assets/slides/slideTwo/banner-3-bg.jpg");
+}
+
+.slide-two-title {
+  background-image: url("./assets/slides/slideTwo/banner-3-img-square.png");
+  background-size: 30%;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+}
+
+.slide-two-h1 {
+  padding: 55px;
+}
+
+.slide-two-desc {
+  text-align: center;
+  margin: 30px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide-two .desc {
+  width: 70%;
+}
+
+.slide-two p {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+/* -------------------- slide 2 ------------------------------------------------------------ */
+
+/* -------------------- slide 3 ------------------------------------------------------------ */
+.slide-three {
+  background-image: url("./assets/slides/slideThree/slide-4-bg.jpg");
+}
+
+.slide-three-title {
+  background-image: url("./assets/slides/slideThree/tranparent-square.png");
+  background-size: 30%;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+}
+
+.slide-three-h1 {
+  padding: 55px;
+}
+
+.slide-three-desc {
+  text-align: center;
+  margin: 30px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide-three-desc .desc {
+  width: 68%;
+}
+
+.slide-three p {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+/* -------------------- slide 3 ------------------------------------------------------------ */
+
+/* -------------------- slide 4 ------------------------------------------------------------ */
+.slide-four {
+  background-image: url("./assets/slides/slideFour/slide-5-bg.png");
+}
+
+.slide-four-title {
+  background-image: url("./assets/slides/slideFour/app-bg.png");
+  background-size: 65%;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.slide-four-app {
+  position: relative;
+  margin-top: 40px;
+}
+
+.app-logo-1,
+.app-logo-2 {
+  max-width: 11%;
+  position: absolute;
+  top: 3%;
+}
+
+.app-logo-1 {
+  left: 22%;
+}
+
+.app-logo-2 {
+  right: 22%;
+}
+
+.slide-four-h1 {
+  padding: 55px;
+}
+
+.slide-four-tech-small {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tech-logo {
+  max-width: 2.5%;
+  padding: 0px 8px;
+  margin-top: -25px;
+}
+
+.slide-four-desc {
+  text-align: center;
+  margin: 30px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide-four-desc .desc {
+  width: 68%;
+}
+
+.slide-four p {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+.slide-four-logo .engage {
+  max-width: 12% !important;
+}
+
+.slide-four-logo .yolo {
+  max-width: 6% !important;
+}
+
+/* -------------------- slide 4 ------------------------------------------------------------ */
+
+/* ------------------------------- slide 5-------------------------------------------------- */
+.slide-five {
+  background-image: url("./assets/slides/slideFive/slide6-bg.jpg");
+}
+
+.slide-five-title {
+  background-image: url("./assets/slides/slideFive/tranparent-square.png");
+  background-size: 40%;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+}
+
+.slide-five-h1 {
+  padding: 55px;
+}
+
+.slide-five-desc {
+  text-align: center;
+  margin: 30px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide-five-desc .desc {
+  width: 68%;
+}
+
+.slide-five p {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+.slide-five .logo-partner {
+  max-width: 10%;
+}
+
+/* ------------------------------- slide 5-------------------------------------------------- */
+
+/* ---------------- slide 6 ----------------------------------------- */
+.slide-six {
+  background-color: black;
+}
+
+.slide-six-title {
+  background-image: url("./assets/company/gvl-frame.png");
+  background-size: 35%;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+}
+
+.slide-six-h1 {
+  padding: 55px;
+}
+
+/* ---------------- slide 6 ----------------------------------------- */
+
+/* ------------------------- slide 7 && 8  -------------------------------------- */
+
+.slide-seven,
+.slide-eight {
+  background-color: black;
+}
+
+.slide-seven-h2,
+.slide-eight-h2 {
+  font-size: 45px;
+}
+
+.slide-seven .partners-image,
+.slide-eight .clients-image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ------------------------- slide 7  && 8 -------------------------------------- */
+
+/* ------------------------- slide special -------------------------------------- */
+
+.slide-special {
+  background-color: black;
+}
+
+.slide-special-box {
+  background-image: url("./assets/company/gvl-frame.png");
+  background-size: 65%;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+}
+
+.slide-special-black {
+  padding: 55px;
+}
+
+.slide-special-black p {
+  font-family: "Teko", sans-serif;
+  font-size: 70px;
+  text-align: center;
+  position: relative;
+  animation: mymove 5s infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes mymove {
+  from {
+    bottom: -200px;
+  }
+  to {
+    bottom: 200px;
+  }
+}
+
+/* ------------------------- slide special -------------------------------------- */
+
+/* ------------------------------------ ending ------------------------------------------------------ */
+.slide-ending {
+  background-color: black;
+}
+
+.slide-ending h1 {
+  text-shadow: rgb(0 54 96 / 65%) 2px 5px 20px;
+}
+
+.slide-ending h1:hover {
+  color: rgb(255, 145, 0);
+}
+
+.slide-ending-desc {
+  position: absolute;
+  bottom: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  font-size: 13px;
+}
+
+.slide-ending .partner-image {
+  display: flex;
+  flex-direction: column;
+}
+/* ------------------------------------ ending ------------------------------------------------------ */
